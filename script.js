@@ -1,6 +1,6 @@
-function computerPlay() {
-    let rps = ["rock", "paper", "scissors"];
-    let random = rps[Math.floor(Math.random() * rps.length)];
+function getComputerChoice() {
+    let options = ["rock", "paper", "scissors"];
+    let random = options[Math.floor(Math.random() * options.length)];
     return random;
   }
   
@@ -23,9 +23,39 @@ function computerPlay() {
     }
   
   }
+
+  function game(){  
+    let scorePlayer = 0;
+    let scoreComputer = 0;
+    console.log("welcome")
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+       console.log(playRound(playerSelection, computerSelection));
+       if(playerSelection, computerSelection== "player"){
+        score++;
+       }
+       else if(playerSelection, computerSelection == "computer"){
+        scoreComputer++;
+       } 
+
+    }
+    console.log("Game over")
+    if(scorePlayer > scoreComputer){
+        console.log("player was the winner");
+    }
+    else if(scorePlayer < scoreComputer){
+        console.log("computer is the winner");
+    }
+    else{
+        console.log("we have a tie");
+    }
+ 
+  }
+
+ game()  
   
-  let computerSelection = computerPlay();
+ let computerSelection = getComputerChoice();
   let playerSelection = prompt("your selection");
   console.log(computerSelection)
   console.log(playRound(playerSelection, computerSelection));
-  
